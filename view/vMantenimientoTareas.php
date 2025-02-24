@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php generarTabla(); ?>
+        
         </tbody>
     </table>  
 </main>
