@@ -37,9 +37,9 @@
             echo('<tr>');
             echo('<td>'.$oTarea->getDescripcionTarea().'</td>');
             echo('<td>'.$oTarea->getFechaCreacion().'</td>');
-            if($opcion=='activos'){
-                echo ('<td>COMPLETADO</td>');
-                echo ('<td>ELIMINAR</td>');
+            if($opcion=='activos'){                
+                echo '<td><form method="post"><input type="submit" class="completarTarea" name="completarTarea" value="'. $oTarea->getCodTarea() .'"></input></form></td>';
+                echo '<td><form method="post"><input type="submit" class="eliminarTarea" name="eliminarTarea" value="'. $oTarea->getCodTarea() .'"></input></form></td>';                
             }
             else{
                 echo ('<td>ELIMINAR</td>');

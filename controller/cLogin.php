@@ -1,4 +1,9 @@
 <?php
+    if(isset($_SESSION['mensaje'])) {
+        echo "<script type='text/javascript'>alert('" . $_SESSION['mensaje'] . "');</script>";
+        unset($_SESSION['mensaje']);
+    }
+
     if(isset($_REQUEST['botonLogin'])){
         $oUsuarioEnCurso=UsuarioPDO::validarUsuario($_REQUEST['codigo'], $_REQUEST['passwd']);
         if($oUsuarioEnCurso!=null){                       

@@ -41,7 +41,12 @@
             $parametros = [$oUsuario->getCodUsuario(), $oUsuario->getNombreUsuario(), $contraseñaCodificada];
 
             // Ejecutamos la consulta SQL.
-            $sql = DBPDO::ejecutaConsulta($sentenciaSQL, $parametros);
+            if(DBPDO::ejecutaConsulta($sentenciaSQL, $parametros)){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
     }
 ?>

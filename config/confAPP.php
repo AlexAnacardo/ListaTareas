@@ -1,5 +1,5 @@
-<?php
-
+<?php    
+    require_once 'core/LibreriaValidacion.php';
     require_once 'model/DBPDO.php';
     require_once 'model/UsuarioPDO.php';
     require_once 'model/Usuario.php';
