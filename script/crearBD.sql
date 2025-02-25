@@ -3,6 +3,7 @@ use dbListaTareas;
 
 create user if not exists 'usuarioTareas'@'%' identified by 'paso';
 
+grant all privileges on dbListaTareas.* to 'usuarioTareas'@'%';
 
 create table if not exists Usuarios(
     CodUsuario varchar(10) primary key,

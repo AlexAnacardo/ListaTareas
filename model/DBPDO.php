@@ -14,21 +14,7 @@
                 // Devolvemos el objeto PDOStatement
                 return $sql;
             } catch (PDOException $ex) {
-                // Si se produce un error, se crea un objeto de la clase ErrorApp
-                $error = new ErrorApp(
-                    $ex->getCode(),
-                    $ex->getMessage(),
-                    $ex->getFile(),
-                    $ex->getLine(),
-                    $_SESSION['paginaAnterior']
-                );
-                //Guardamos el objeto ErrorApp en la sesion
-                $_SESSION['error'] = $error;
-                $_SESSION['paginaEnCurso'] = 'error';
                 
-                // Redirigir al usuario a la página de error
-                header('Location: index.php');
-                exit();
             } finally {
                 // Finalizamos la conexión a la base de datos
                 unset($miDB);

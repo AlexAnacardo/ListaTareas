@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=g, initial-scale=1.0">
+    <link rel="stylesheet" href="webroot/css/estilos.css">
     <title>Mantenimiento Tareas</title>
 </head>
 <body>
     <header>
-        <h1>Placeholder</h1>
+        <h1><?php echo($_SESSION['CabeceraPaginaEnCurso']) ?></h1>
     </header>
     
     <?php require_once $view[$_SESSION['paginaEnCurso']]; ?>

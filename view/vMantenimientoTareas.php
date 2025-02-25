@@ -1,15 +1,14 @@
 <main>
-    <table>
-        <thead>
-            <tr>
-                <th>Codigo</th>
-                <th>Descripcion</th>
-                <th>Fecha de creacion de la tarea</th>
-                <th>Fecha en la que la tarea se completo</th>
-            </tr>
-        </thead>
-        <tbody>
-        
-        </tbody>
-    </table>  
+    <?php cargarTabla($_SESSION['opcionTabla']); ?> 
+    <form method="post" novalidate>
+        <input type="submit" id="botonCerrarSesion" name="botonCerrarSesion" value="Cerrar Sesion">
+        <?php
+            if($_SESSION['opcionTabla']=='activos'){
+                echo('<input type="submit" id="botonMostrarCompletadas" name="botonMostrarCompletadas" value="Mostrar Completadas">');
+            }
+            else{
+                echo('<input type="submit" id="botonMostrarActivas" name="botonMostrarActivas" value="Mostrar Activas">');
+            }
+        ?>
+    </form>
 </main>

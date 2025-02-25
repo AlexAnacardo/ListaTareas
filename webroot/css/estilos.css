@@ -1,0 +1,101 @@
+/*GENERAL*/
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #674636;
+    display: flex;
+    justify-content: center;
+    h1{
+        color: white;
+        
+        width: fit-content;
+        font-size: 13vh;
+    }
+}
+
+main{
+    height: 81.72vh;
+}
+
+footer{
+    background-color: #AAB396;
+    
+    p{
+        font-size: 3vh;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+/*LOGIN*/
+#login{    
+    height: 100%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    
+    background-image: url(../images/FondoLogin.jpg);
+    background-size: cover;
+    
+    form{
+        border: 2px solid black;
+        border-radius: 9px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 7vh;
+
+        height: 45%;
+        width: 30%;
+        background-color: #FFF8E8;
+        
+        #botonLogin, #botonRegistro{
+            border: 1px solid black;
+            padding: 1vh;
+            border-radius: 5px;
+            background-color: #F9EBC0;
+        }
+        #botonLogin:hover, #botonRegistro:hover{
+            background-color: #EFE0B3;
+        }
+    }
+}
+
+/*REGISTRARSE*/
+#registrarse{
+    height: 100%;    
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    
+    background-image: url(../images/FondoLogin.jpg);
+    background-size: cover;
+    
+    form{
+        border: 2px solid black;
+        border-radius: 9px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 7vh;
+
+        height: 45%;
+        width: 30%;
+        background-color: #FFF8E8;
+        
+        #botonCrear, #botonVolver{
+            border: 1px solid black;
+            padding: 1vh;
+            border-radius: 5px;
+            background-color: #F9EBC0;
+        }
+        #botonCrear:hover, #botonVolver:hover{
+            background-color: #EFE0B3;
+        }
+    }
+}
