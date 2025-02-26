@@ -16,12 +16,12 @@ header{
 }
 
 main{
-    height: 81.72vh;
+    height: 80.1vh;
 }
 
 footer{
     background-color: #AAB396;
-    
+    padding: 0.3% 0%;
     p{
         font-size: 3vh;
         display: flex;
@@ -56,7 +56,7 @@ footer{
         #botonLogin, #botonRegistro{
             border: 1px solid black;
             padding: 1vh;
-            border-radius: 5px;
+            border-radius: 8px;
             background-color: #F9EBC0;
         }
         #botonLogin:hover, #botonRegistro:hover{
@@ -110,13 +110,13 @@ footer{
         #botonCrear, #botonVolver{
             border: 1px solid black;
             padding: 1vh;
-            border-radius: 5px;
+            border-radius: 8px;
             background-color: #F9EBC0;
         }
         #botonCrear:hover, #botonVolver:hover{
             background-color: #EFE0B3;
-        }
-    }
+        }                
+    }    
 }
 
 /*Mantenimiento Tareas*/
@@ -130,17 +130,20 @@ footer{
     
     table{     
         width: 90%;
-        font-size: 170%;
+        font-size: 150%;
         
         td{
-            padding: 2% 1%;            
+            padding: 1.3% 0.5%;            
         }
         
         
+        
+        
         td:nth-child(3), td:nth-child(4){
-            background-color: red;
             padding: 0;
-            width: 15%;  
+            form{                
+                margin: 0 auto;
+            }
         }
         
         .completarTarea{
@@ -150,8 +153,8 @@ footer{
             background-image: url(../images/TareaCompletada.png);
             background-size: cover;
             background-position: center;
-            height: 10vh;
-            width: 10vh;   
+            height: 7vh;
+            width: 4vw;   
             
         }
         .eliminarTarea{
@@ -162,21 +165,25 @@ footer{
             background-size: cover;
             background-position: center;
             border: none;
-            height: 10vh;
-            width: 10vh;
+            height: 9vh;
+            width: 10vw;
+        }        
+        
+        .completarTarea:hover, .eliminarTarea:hover{
+            cursor: pointer;
         }
     }
-    table, tr,td{
+    table, th,tr,td{
         border: 2px solid black; 
         border-collapse: collapse;
     }
-    #botonCerrarSesion, #botonMostrarCompletadas, #botonMostrarActivas{
+    #botonCerrarSesion, #botonMostrarCompletadas, #botonMostrarActivas, #botonAñadirTarea{
         border: 1px solid black;
         padding: 1vh;
-        border-radius: 5px;
+        border-radius: 8px;
         background-color: #F9EBC0;
     }
-    #botonCerrarSesion:hover, #botonMostrarCompletadas:hover, #botonMostrarActivas:hover{
+    #botonCerrarSesion:hover, #botonMostrarCompletadas:hover, #botonMostrarActivas:hover, #botonAñadirTarea:hover{
         background-color: #EFE0B3;
     }
     
@@ -187,4 +194,49 @@ footer{
         justify-content: space-around;
 
     }
+    
+        
+    .primeraPagina{
+    border: none;
+    height: 40px;
+    width: 40px;
+    background: none;
+    color: transparent;
+    background-image: url(../images/pagInicio.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.anteriorPagina{
+    border: none;
+    height: 40px;
+    width: 40px;
+    background: none;
+    color: transparent;
+    background-image: url(../images/pagAnt.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.siguientePagina{
+    border: none;
+    height: 40px;
+    width: 40px;
+    background: none;
+    color: transparent;
+    background-image: url(../images/pagSig.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.ultimaPagina{
+    border: none;
+    height: 40px;
+    width: 40px;
+    background: none;
+    color: transparent;
+    background-image: url(../images/pagFinal.png);
+    background-size: cover;
+    background-position: center;
+}
 }

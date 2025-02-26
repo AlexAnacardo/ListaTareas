@@ -12,7 +12,7 @@ create table if not exists Usuarios(
 )engine=innodb;
 
 create table if not exists Tareas(
-    CodTarea varchar(10),
+    CodTarea int AUTO_INCREMENT,
     CodUsuario varchar(10),
     DescripcionTarea varchar(100),
     FechaCreacion datetime,

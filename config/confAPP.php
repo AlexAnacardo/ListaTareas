@@ -11,7 +11,8 @@
         'mantenimientoTareas' => 'controller/cMantenimientoTareas.php',
         'login' => 'controller/cLogin.php',
         'registrarse' => 'controller/cRegistrarse.php',
-        'error' => 'controller/cError.php'
+        'error' => 'controller/cError.php',
+        'añadirTarea' => 'controller/cAñadirTarea.php'
     ];
 
     $view=[
@@ -19,6 +20,7 @@
         'login' => 'view/vLogin.php',
         'registrarse' => 'view/vRegistrarse.php',
         'layout' => 'view/layout.php',
-        'error' => 'view/vError.php'
+        'error' => 'view/vError.php',
+        'añadirTarea' => 'view/vAñadirTarea.php'
     ];
 ?>
