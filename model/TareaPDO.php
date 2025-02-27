@@ -3,12 +3,14 @@
         public static function listarTareas($codigoUsuario, $opcion, $paginaTabla=0){
             switch($opcion){
                 case 'activos':
+                    $paginaTabla*=5;
                     $sentenciaSQL = <<< FIN
                         select * from Tareas where CodUsuario= ? and FechaTareaRealizada is null limit  {$paginaTabla}, 5
                         FIN;
                 break;
                 
                 case 'completados':
+                    $paginaTabla*=5;
                     $sentenciaSQL = <<< FIN
                         select * from Tareas where CodUsuario= ? and FechaTareaRealizada is not null limit  {$paginaTabla}, 5
                         FIN;

@@ -1,8 +1,13 @@
 <?php
-    $_SESSION['ultimaPaginaTabla']=[        
-        "activos"=> (floor(TareaPDO::contarTareas('activos')/5))*5,
-        "completados"=> (floor(TareaPDO::contarTareas('completados')/5))*5
+    $_SESSION['ultimaPaginaTabla']=[         
+        "activos"=> (ceil(TareaPDO::contarTareas('activos')/5) - 1),
+        "completados"=> (ceil(TareaPDO::contarTareas('completados')/5) - 1)
     ];
+    $_SESSION['totalTareas']=[
+        "activos"=> TareaPDO::contarTareas('activos'),
+        "completados"=> TareaPDO::contarTareas('completados')
+    ];
+
     
     if(!isset($_SESSION['paginaTablaEnCurso'])){
         $_SESSION['paginaTablaEnCurso']=0;
@@ -17,7 +22,8 @@
     
     if(isset($_REQUEST['eliminarTarea'])){
         if(TareaPDO::eliminarTarea($_REQUEST['eliminarTarea'])){
-            
+            header('location: index.php');        
+            exit();
         }
         else{
             echo "<script type='text/javascript'>alert('Error al eliminar la tarea');</script>";
@@ -55,12 +61,12 @@
         $_SESSION['paginaTablaEnCurso']=0;
     }
 
-    if(isset($_REQUEST['anteriorPagina']) && $_SESSION['paginaTablaEnCurso']>=5){        
-        $_SESSION['paginaTablaEnCurso']-=5;
+    if(isset($_REQUEST['anteriorPagina']) && $_SESSION['paginaTablaEnCurso']>=1){        
+        $_SESSION['paginaTablaEnCurso']-=1;
     }
 
     if(isset($_REQUEST['siguientePagina']) && $_SESSION['paginaTablaEnCurso']<$_SESSION['ultimaPaginaTabla'][$_SESSION['opcionTabla']]){        
-        $_SESSION['paginaTablaEnCurso']+=5;
+        $_SESSION['paginaTablaEnCurso']+=1;
     }
 
     if(isset($_REQUEST['ultimaPagina'])){        
