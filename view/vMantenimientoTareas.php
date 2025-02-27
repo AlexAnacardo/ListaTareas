@@ -1,8 +1,7 @@
 <main>
     <div id="mantenimientoTareas">
         <?php cargarTabla($_SESSION['opcionTabla']); ?> 
-        <form id="paginacion" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" novalidate>
-            
+        <form id="paginacion" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" novalidate>            
             <input type="submit" class="primeraPagina" name="primeraPagina" value="primeraPagina"/>            
             <input type="submit" class="anteriorPagina" name="anteriorPagina" value="anteriorPagina"/> 
             <p>Pagina <?php echo(floatval($_SESSION['paginaTablaEnCurso'])/5+1); ?> de <?php echo(floatval($_SESSION['ultimaPaginaTabla'][$_SESSION['opcionTabla']])/5); ?></p>

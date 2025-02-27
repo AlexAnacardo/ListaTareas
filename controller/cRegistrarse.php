@@ -2,7 +2,11 @@
     define('MAX_CADENA', 3000);
     define('MIN_CADENA', 1);
     define('OBLIGATORIO', 1);
-
+    
+    $entradaOK=true;
+    $usuarioCreado=false;
+    $errorUsuario=false;
+    
     if(isset($_REQUEST['botonVolver'])){
         $_SESSION['paginaEnCurso'] = 'login';    
         $_SESSION['paginaAnterior'] = 'registrarse';
@@ -11,7 +15,7 @@
         exit();
     }
 
-    $entradaOK=true;
+    
     
    $aErrores = [//Array de errores
         'codigoUsuario' => '',
@@ -44,17 +48,21 @@
         $oUsuario = new Usuario($_REQUEST['codigoUsuario'], $_REQUEST['contraseñaUsuario'], $_REQUEST['nombreUsuario']);
 
         if(UsuarioPDO::añadirUsuario($oUsuario)){
-            $_SESSION['mensaje'] = 'Usuario añadido';
-
-            $_SESSION['paginaEnCurso'] = 'login';    
-            $_SESSION['paginaAnterior'] = 'registrarse';
-            $_SESSION['CabeceraPaginaEnCurso'] = 'Iniciar Sesion';
-            header('Location: index.php');
-            exit();
+            $usuarioCreado=true;
         } else {
-            echo "<script type='text/javascript'>alert('Usuario ya existente');</script>";
+            $errorUsuario=true;
         }
     }
+    
+    if(isset($_REQUEST['aceptarUsuarioCreado'])){
+        $_SESSION['paginaEnCurso'] = 'login';    
+        $_SESSION['paginaAnterior'] = 'registrarse';
+        $_SESSION['CabeceraPaginaEnCurso'] = 'Iniciar Sesion';
+        header('Location: index.php');
+        exit();
+    }
+    
+    
     
     require_once $view['layout'];
 ?>

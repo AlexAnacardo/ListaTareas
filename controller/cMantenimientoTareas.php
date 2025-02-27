@@ -64,7 +64,7 @@
     }
 
     if(isset($_REQUEST['ultimaPagina'])){        
-        $_SESSION['paginaTablaEnCurso']=floatval($_SESSION['ultimaPaginaTabla'][$_SESSION['opcionTabla']]);
+        $_SESSION['paginaTablaEnCurso']=$_SESSION['ultimaPaginaTabla'][$_SESSION['opcionTabla']];
     }        
     
     function cargarTabla($opcion='activos'){
@@ -76,7 +76,7 @@
         elseif ($opcion=='completados') {
             $aTareas= TareaPDO::listarTareas($_SESSION['usuarioActivo']->getCodUsuario(), $opcion, $_SESSION['paginaTablaEnCurso']);
             
-            echo('<table> <thead> <tr> <th>Descripcion</th> <th>Fecha de creacion de la tarea</th> <th>Fecha en la que la tarea se completo</th> </tr> </thead> <tbody>');
+            echo('<table> <thead> <tr> <th>Descripcion</th> <th>Fecha de creacion de la tarea</th> <th>Fecha en la que la tarea se completo</th> <th>Eliminar tarea</th> </tr> </thead> <tbody>');
         }
         else{
             $aTareas=[];

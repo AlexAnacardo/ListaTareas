@@ -2,7 +2,7 @@
     <div id="login">
         <form method="post" novalidate> 
             <section>
-                <label for="nombre">Codigo</label>
+                <label for="codigo">Codigo</label>
                 <input type="text" name="codigo" id="codigo">
             </section>
             <section>

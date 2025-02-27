@@ -1,6 +1,6 @@
 <main>    
     <div id="registrarse">
-        <form method="post" novalidate>
+        <form method="post" id="formularioCrearusuario" novalidate>
             <section>
                 <label for="codigoUsuario">Codigo del usuario</label>
                 <input type="text" id="codigoUsuario" name="codigoUsuario" value="<?php echo (isset($_REQUEST['codigoUsuario']) ? $_REQUEST['codigoUsuario'] : ''); ?>">
@@ -28,6 +28,19 @@
             <section>
                 <input type="submit" id="botonCrear" name="botonCrear" value="Crear usuario">
                 <input type="submit" id="botonVolver" name="botonVolver" value="Cancelar">
+            </section>
+        </form>
+        <form id="formularioUsuarioCreado" style="display: <?php echo($usuarioCreado ? 'flex' : 'none') ?>">
+            <section>
+                <p>Usuario Creado</p>
+                <input type="submit" id="aceptarUsuarioCreado" name="aceptarUsuarioCreado" value="Aceptar">
+            </section>
+        </form>
+
+        <form id="formularioError" style="display: <?php echo($errorUsuario ? 'flex' : 'none') ?>">
+            <section>
+                <p>Ya existe un usuario con el mismo codigo</p>
+                <input type="submit" id="aceptarErrorUsuario" name="aceptarErrorUsuario" value="Aceptar">
             </section>
         </form>
     </div>
